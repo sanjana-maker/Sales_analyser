@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Columns</title>
+  </head>
+  <body>
+    <h1>Map Columns</h1>
+    <form method="POST">
+      <label for="order_date">Order Date Column:</label>
+      <select name="order_date" required>
+        {% for col in columns %}
+        <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <label for="quantity">Quantity Column:</label>
+      <select name="quantity" required>
+        {% for col in columns %}
+        <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </select>
+      <br />
+      <label for="unit_price">Unit Price Column (Optional):</label>
+      <select name="unit_price">
+        <option value="">None</option>
+        {% for col in columns %}
+        <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </select>
+      <br /><br />
+      <button type="submit">Analyze</button>
+    </form>
+  </body>
+</html>
